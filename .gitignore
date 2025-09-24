@@ -1,0 +1,46 @@
+# Entorno virtual
+env/
+venv/
+.venv/
+envRag/
+envRag/
+.envRag/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Archivos de entorno/configuración
+*.env
+.env.*
+!example.env
+
+# Configuración de editores/IDE
+.vscode/
+.idea/
+*.swp
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.cache/
+*.DS_Store
+Thumbs.db
+
+# Archivos de dependencias compiladas
+dist/
+build/
+*.egg-info/
+
+# Configuración de Jupyter/Colab (si usas notebooks para pruebas)
+.ipynb_checkpoints
