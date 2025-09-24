@@ -31,6 +31,23 @@ async def consulta_gpt():
     try:
         response = await ConsultaGpt().Consulta_Gpt5_nano()
         return response
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+@app.post("/consultas-api-gpt5-nano/prompt")
+async def consulta_gpt_prompt():
+    try:
+        datos = {
+            "edad": 35,
+            "estadoCivil": "casado",
+            "hijos": 2,
+            "presupuesto": "medio",
+            "intereses": "deporte, naturaleza y tranquilidad"
+        }
+        prompt = ConsultaGpt.redactar_prompt(datos)
+        response = await ConsultaGpt().Sugerencias_propiedades(promp_de_busqueda=prompt)
+        return response
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
