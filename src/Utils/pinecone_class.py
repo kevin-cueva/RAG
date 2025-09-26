@@ -22,6 +22,7 @@ class pinecone_clase:
             print('Datos almacenados en Pinecone')
         except Exception as e:
             raise RuntimeError('Error al almacenar los embeddings en Pinecone', e)
+        
     async def buscar_datos(self, query_formato_embedding, top_k: int = 3):
         """Buscar los embeddings más similares en el índice"""
         try:
@@ -36,3 +37,5 @@ class pinecone_clase:
             raise RuntimeError('Error al buscar los embeddings en Pinecone', e)
          
 
+    def prompt_busqueda(preferencias: dict) -> str:
+        return f"Propiedad en la {preferencias['ubicacion']} de tamaño {preferencias['tamano']} y un precio de {preferencias['precio']}."
